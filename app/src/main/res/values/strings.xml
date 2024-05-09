@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PrzeTerminarz</string>
+    <string-array name="categories">
+        <item>Wszystkie</item>
+        <item>Produkty spożywcze</item>
+        <item>Leki</item>
+        <item>Kosmetyki</item>
+    </string-array>
+    <string-array name="addCategories">
+        <item>Produkty spożywcze</item>
+        <item>Leki</item>
+        <item>Kosmetyki</item>
+    </string-array>
+</resources>
