@@ -1,41 +1,55 @@
-1 PrzeTerminarz
+# PrzeTerminarz
 
-Celem zadania jest stworzenie aplikacji mobilnej, która umożliwi użytkownikom zbieranie i zarządzanie informacjami o terminach ważności różnych produktów w kategoriach: Produkty spożywcze, Leki oraz Kosmetyki. Aplikacja ma pomóc w redukcji marnowania produktów poprzez śledzenie ich dat ważności i ułatwienie ich zużycia przed upływem terminu.
+PrzeTerminarz is a mobile application designed to help users track and manage the expiration dates of various products in the categories: Food, Medicine, and Cosmetics. The app aims to reduce product wastage by tracking expiration dates and facilitating the use of products before they expire.
 
-1.1 Ekran listy:
+## Features
 
-• aplikacja powinna wyświetlać listę wprowadzonych produktów z możliwością filtrowania według kategorii oraz stanu produktu (ważny/przeterminowany)
+### 1. List Screen
 
-• element listy powinny zawierać: nazwę produktu, termin ważności, kategorię oraz ilość (jeśli została określona)
+- **Product List Display**: Shows a list of entered products with filtering options by category and product status (valid/expired).
+- **List Elements**: Each list item includes the product name, expiration date, category, and quantity (if specified).
+- **Sorting**: The list is automatically sorted by product expiration dates, from shortest to longest.
+- **Summary**: The screen provides a summary of the total number of displayed items.
+- **Item Selection**: Selecting a list item allows for viewing and editing the product details if the product is still valid; otherwise, a message indicates that the product cannot be edited.
+- **Long Press Deletion**: Long pressing an item shows an alert asking for confirmation to delete the item from the list (if the product is still valid). Upon confirmation, the item is removed, and the summary is updated.
+- **Add New Item**: A button to add a new product is available on the screen.
+- **RecyclerView Implementation**: The list is implemented using the RecyclerView graphical component.
 
-• lista powinna być automatycznie sortowana według daty ważności produktów, od najkrótszej do najdłuższej
+### 2. Add/Edit Product Screen
 
-• ekran powinien zawierać podsumowanie dla puli prezentowanych elementów (ich liczbę)
+- **Screen Activation**: Triggered by clicking the add button or by editing an existing list entry.
+- **Data Entry/Editing**: Allows setting or changing the product data and includes a save button for the entered changes.
+- **Category Selection**: Choose the category using a dropdown list.
+- **Date Picker**: Enter the expiration date using a date picker control.
+- **Data Validation**: Validates the entered data (date cannot be in the past, name cannot be empty, if quantity is entered, it must be a numerical value and the unit must be specified).
 
-• wybór elementu listy umożliwi jego podgląd i edycję, tylko jeśli produkt jest nadal przydatny, w przeciwnym wypadku wyświetli stosowną informację o braku możliwości edycji takiego produktu
+### Data Persistence
 
-• dłuższe przytrzymanie spowoduje pokazanie alertu z zapytaniem o usunięcie elementu z listy (jeśli produkt jest dalej ważny). Jeśli użytkownik zatwierdzi usunięcie wpis powinien zniknąć z listy, a podsumowanie się aktualizować
+Data saving in persistent storage is outside the scope of this project. Changes made will reset upon each app closure.
 
-• ekran powinien zawierać również przycisk umożliwiający dodanie nowego elementu
+## Sample Data
 
-• lista powinna być zrealizowana implementacja komponentu graficznego RecyclerView
+A set of sample data is loaded each time the application is launched to showcase all functionalities.
 
+## Installation and Setup
 
-1.2 Ekran dodawania/edycji produktu:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Oliwiawys/PrzeTerminarz
+2. Open the project in your preferred IDE (e.g., Android Studio).
+3. Build and run the application on an emulator or a physical device.
 
+## Usage
 
-• uruchamia się w następstwie kliknięcia przycisku dodającego lub w przypadku edycji istniejącego wpisu na liście
+1. **Adding a Product**:
+- Click the add button.
+- Fill in the product details.
+- Save the product.
 
-• ekran ten umożliwia nadanie/zmianę danych wpisu oraz zawiera przycisk zapisujący dokonane zmiany/wprowadzone dane
+2. **Editing a Product**:
+- Select a valid product from the list.
+- Edit the details and save.
 
-• kategoria wybierana przy pomocy rozwijanej listy wyboru lub radio buttonów
-
-• data ważności wprowadzana przy pomocy kontrolki date picker
-
-• ekran waliduje wprowadzane dane (data nie może być przeszła, nazwa pusta, jesli użytkownik zdecyduje się na wprowadzenie ilości to ilość musi być wartością liczbową, a jednostka nie może być pominięta)
-
-• edycja produktu nie może odbywać poprzez usunięcie starego wpisu i dodanie go ponownie ze zmienioną zawartością
-
-Zapisywanie danych w pamięci stałej nie należy do zakresu tego zadania. Wprowadzone zmiany mogą się restartować przy każdym zamknięciu aplikacji. 
-
-Przed poddaniem projektu ocenie należy przygotować zestaw danych przykładowych wczytywany każdorazowo podczas uruchomienia aplikacji, w celu zaprezentowania wszystkich funkcjonalności. (najlepiej dane te umieścić bezpośrednio w kodzie aplikacji)
+3. **Deleting a Product**:
+- Long press a valid product.
+- Confirm deletion.
